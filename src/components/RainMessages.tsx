@@ -11,7 +11,7 @@ export default function RainMessages(props: IDropsProps) {
     } else if (numOfDrops < 75) {
         message = "נותן בסתר?";
     } else if (numOfDrops < 100) {
-        message = "חסר לנו אחד למיניין, תצטרף?";
+        message = "חסר לנו אחד למניין, תצטרף?";
     }
     return (
         <Typography variant="h5" id="home-content" textAlign="center" noWrap={false}>
