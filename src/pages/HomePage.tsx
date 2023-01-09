@@ -33,7 +33,7 @@ const valuetext = (value: number) => {
 
 const gridContainer = {
   height: "90vh",
-  '@media (min-width: 780px)' : {
+  '@media (min-width: 780px)': {
     height: "100vh"
   }
 };
@@ -79,11 +79,9 @@ export default function HomePage() {
             נראה לכם?
           </Typography>
         </Grid>
-        {sliderValue === 100 &&
-          <Grid item alignSelf="center">
-            <Logo />
-          </Grid>
-        }
+        <Grid item alignSelf="center">
+          <Logo numOfDrops={sliderValue} />
+        </Grid>
         <Grid item>
           <Grid container flexDirection="column">
             <Grid item>
