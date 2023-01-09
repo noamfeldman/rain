@@ -1,10 +1,7 @@
+import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React from 'react';
-
-interface IDropsProps {
-  numOfDrops: number;
-}
+import { IDropsProps } from '../model/interfaces';
 
 const Lines = styled.div<IDropsProps>`
   position: absolute;

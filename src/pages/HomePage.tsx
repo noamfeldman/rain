@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Grid, Slider, Typography } from '@mui/material';
 import DropsAnimation from '../components/DropsAnimation';
+import RainMessages from '../components/RainMessages';
+import Logo from '../components/Logo';
 
 const marks = [
   {
@@ -32,12 +34,15 @@ const valuetext = (value: number) => {
 export default function HomePage() {
   const initDropSlider = 10;
   const [drops, setDrops] = React.useState(initDropSlider);
+  const [sliderValue, setSliderValue] = React.useState(initDropSlider);
+
   const onNumberOfDropsChangeHandler = (
     event: React.SyntheticEvent | Event,
     value: number | number[]
   ) => {
     if (!isNaN(Number(value))) {
       setDrops(Math.floor(Number(value) / 2));
+      setSliderValue(Number(value));
     }
   };
 
@@ -60,26 +65,31 @@ export default function HomePage() {
             משיב הרוח ומוריד הגשם!!!
           </Typography>
         </Grid>
-        {drops === 50 &&
-        <Grid item>
-            <Typography variant="h6" id="home-content" textAlign="center" noWrap={false}>
-              ישתבח שמו.... לעד!
-            </Typography>
-          </Grid>
+
+        {sliderValue === 100 &&
+          <Logo />
         }
+
         <Grid item>
-            <Slider
-              aria-label="Custom drops"
-              defaultValue={initDropSlider}
-              getAriaValueText={valuetext}
-              valueLabelDisplay="off"
-              marks={marks}
-              onChangeCommitted={onNumberOfDropsChangeHandler}
-              sx={{ zIndex: 2 }}
-            />
+          <Grid container flexDirection="column">
+            <Grid item>
+              <Slider
+                aria-label="Custom drops"
+                defaultValue={initDropSlider}
+                getAriaValueText={valuetext}
+                valueLabelDisplay="off"
+                marks={marks}
+                onChangeCommitted={onNumberOfDropsChangeHandler}
+                sx={{ zIndex: 2 }}
+              />
+            </Grid>
+            <Grid item>
+              <RainMessages numOfDrops={sliderValue} />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
-     
+
       <DropsAnimation numOfDrops={drops * 2} />
     </>
   );
