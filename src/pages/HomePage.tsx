@@ -55,13 +55,13 @@ export default function HomePage() {
         alignContent="center"
         flexDirection="column"
         height="100vh"
-        paddingTop={10}
-        paddingBottom={10}
+        paddingTop={2}
+        paddingBottom={5}
         paddingLeft={5}
         paddingRight={5}
       >
         <Grid item>
-          <Typography variant="h3" id="home-content" textAlign="center" noWrap={false}>
+          <Typography variant="h4" id="home-content" textAlign="center" noWrap={false}>
             משיב הרוח ומוריד הגשם
           </Typography>
 
