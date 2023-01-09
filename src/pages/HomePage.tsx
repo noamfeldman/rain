@@ -31,6 +31,13 @@ const valuetext = (value: number) => {
   return `${value} Drops`;
 };
 
+const gridContainer = {
+  height: "90vh",
+  '@media (min-width: 780px)' : {
+    height: "100vh"
+  }
+};
+
 export default function HomePage() {
   const initDropSlider = 10;
   const [drops, setDrops] = React.useState(initDropSlider);
@@ -54,11 +61,10 @@ export default function HomePage() {
         justifyContent="space-between"
         alignContent="center"
         flexDirection="column"
-        height="100vh"
         paddingTop={2}
         paddingBottom={5}
         paddingLeft={5}
-        paddingRight={5}
+        paddingRight={5} sx={gridContainer}
       >
         <Grid item>
           <Typography variant="h4" id="home-content" textAlign="center" noWrap={false}>
