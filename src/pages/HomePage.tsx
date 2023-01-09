@@ -57,7 +57,7 @@ export default function HomePage() {
       >
         <Grid item>
           <Typography variant="h3" id="home-content" textAlign="center" noWrap={false}>
-            משיב הרוח ומוריד הגשם!
+            משיב הרוח ומוריד הגשם!!!
           </Typography>
         </Grid>
         {drops === 50 &&
