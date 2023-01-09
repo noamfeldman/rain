@@ -5,7 +5,7 @@ export default function RainMessages(props: IDropsProps) {
     const { numOfDrops } = props;
     let message = "איזה צדיק! ישתבח שמו.... לעד!";
     if (numOfDrops < 25) {
-        message = "רשע גמור!";
+        message = "ואהבת לרעך כמוך";
     } else if (numOfDrops < 50) {
         message = "תפילין הנחת?";
     } else if (numOfDrops < 75) {

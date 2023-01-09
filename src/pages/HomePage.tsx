@@ -7,7 +7,7 @@ import Logo from '../components/Logo';
 const marks = [
   {
     value: 0,
-    label: 'גוי'
+    label: 'יהודי'
   },
   {
     value: 25,
@@ -62,16 +62,30 @@ export default function HomePage() {
       >
         <Grid item>
           <Typography variant="h3" id="home-content" textAlign="center" noWrap={false}>
-            משיב הרוח ומוריד הגשם!!!
+            משיב הרוח ומוריד הגשם
+          </Typography>
+
+          <Typography variant="body2" id="home-content" textAlign="center" noWrap={false}>
+            האתר לחיזוק המורשת היהודית, בארץ הקודש ובתפוצות. הקניית ידע,  התמצאות ותחושת "בית" בתרבות ישראל. יצירת תחושת שייכות ואחריות לעם, למדינה ולתרבות ישראל.
+          </Typography>
+
+          <Typography variant="h6" id="home-content" textAlign="center" noWrap={false}>
+            נראה לכם?
           </Typography>
         </Grid>
 
+
         {sliderValue === 100 &&
-          <Logo />
+          <Grid item alignSelf="center">
+            <Logo />
+          </Grid>
         }
 
         <Grid item>
-          <Grid container flexDirection="column">
+          <Grid container flexDirection="column" spacing={5}>
+            <Grid item>
+              <RainMessages numOfDrops={sliderValue} />
+            </Grid>
             <Grid item>
               <Slider
                 aria-label="Custom drops"
@@ -82,9 +96,6 @@ export default function HomePage() {
                 onChangeCommitted={onNumberOfDropsChangeHandler}
                 sx={{ zIndex: 2 }}
               />
-            </Grid>
-            <Grid item>
-              <RainMessages numOfDrops={sliderValue} />
             </Grid>
           </Grid>
         </Grid>
