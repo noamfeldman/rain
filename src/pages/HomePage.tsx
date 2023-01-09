@@ -73,20 +73,17 @@ export default function HomePage() {
             נראה לכם?
           </Typography>
         </Grid>
-
-
         {sliderValue === 100 &&
           <Grid item alignSelf="center">
             <Logo />
           </Grid>
         }
-
         <Grid item>
-          <Grid container flexDirection="column" spacing={5}>
+          <Grid container flexDirection="column">
             <Grid item>
               <RainMessages numOfDrops={sliderValue} />
             </Grid>
-            <Grid item>
+            <Grid item paddingTop={5} paddingBottom={2}>
               <Slider
                 aria-label="Custom drops"
                 defaultValue={initDropSlider}
@@ -100,7 +97,6 @@ export default function HomePage() {
           </Grid>
         </Grid>
       </Grid>
-
       <DropsAnimation numOfDrops={drops * 2} />
     </>
   );
