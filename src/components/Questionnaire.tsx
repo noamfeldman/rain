@@ -1,4 +1,4 @@
-import React, { FormEventHandler, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormControl from '@mui/material/FormControl';
 import { Checkbox, FormControlLabel, FormGroup, FormLabel } from "@mui/material";
 import { QuestionnaireProps } from "../model/interfaces";
