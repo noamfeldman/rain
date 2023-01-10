@@ -71,7 +71,6 @@ export default function HomePage() {
         paddingBottom={5}
         paddingLeft={5}
         paddingRight={5}
-        spacing={5}
         sx={gridContainer}
       >
         <Grid item>

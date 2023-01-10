@@ -5,8 +5,8 @@ import { IDropsProps } from "../model/interfaces";
 import styled from "@emotion/styled";
 
 const SpinImage = styled.img`
-    width: 256px;
-    height: 256px;
+    width: 100px;
+    height: 100px;
     animation:spin 1.5s linear infinite;
 
 @keyframes spin { 
