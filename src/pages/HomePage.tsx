@@ -33,7 +33,7 @@ const valuetext = (value: number) => {
 };
 
 const gridContainer = {
-  height: "95vh",
+  height: "90vh",
   '@media (min-width: 780px)': {
     height: "100vh"
   }
