@@ -33,9 +33,9 @@ const valuetext = (value: number) => {
 };
 
 const gridContainer = {
-  height: "90vh",
+  minHeight: "95vh",
   '@media (min-width: 780px)': {
-    height: "100vh"
+    minHeight: "100vh"
   }
 };
 
@@ -70,7 +70,9 @@ export default function HomePage() {
         paddingTop={2}
         paddingBottom={5}
         paddingLeft={5}
-        paddingRight={5} sx={gridContainer}
+        paddingRight={5}
+        spacing={5}
+        sx={gridContainer}
       >
         <Grid item>
           <Typography variant="h4" id="home-content" textAlign="center" noWrap={false}>
@@ -80,12 +82,8 @@ export default function HomePage() {
           <Typography variant="body2" id="home-content" textAlign="center" noWrap={false}>
             האתר לחיזוק המורשת היהודית, בארץ הקודש ובתפוצות. הקניית ידע,  התמצאות ותחושת "בית" בתרבות ישראל. יצירת תחושת שייכות ואחריות לעם, למדינה ולתרבות ישראל.
           </Typography>
-
-          <Typography variant="h6" id="home-content" textAlign="center" noWrap={false}>
-            נראה לכם?
-          </Typography>
         </Grid>
-        <Grid item>
+        <Grid item alignSelf="center">
           <Questionnaire onChange={handleQuestionnaireChange}/>
         </Grid>
         <Grid item alignSelf="center">

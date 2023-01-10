@@ -3,7 +3,7 @@ import FormControl from '@mui/material/FormControl';
 import { Checkbox, FormControlLabel, FormGroup, FormLabel } from "@mui/material";
 import { QuestionnaireProps } from "../model/interfaces";
 
-
+const noMarginPaddingRight = {marginRight: 0, paddingRight: 0};
 
 export default function Questionnaire(props: QuestionnaireProps) {
     const { onChange } = props;
@@ -29,21 +29,21 @@ export default function Questionnaire(props: QuestionnaireProps) {
         <FormControl component="fieldset" variant="standard" sx={{ zIndex: 3 }}>
             <FormLabel component="legend">"ולעָבדו בכל לבבכם" - מה התפללת היום?</FormLabel>
             <FormGroup>
-                <FormControlLabel
+                <FormControlLabel sx={noMarginPaddingRight}
                     control={
-                        <Checkbox checked={pray1} onChange={handleChange} name="pray1" />
+                        <Checkbox checked={pray1} onChange={handleChange} name="pray1" sx={noMarginPaddingRight}/>
                     }
                     label="שחרית"
                 />
-                <FormControlLabel
+                <FormControlLabel sx={noMarginPaddingRight}
                     control={
-                        <Checkbox checked={pray2} onChange={handleChange} name="pray2" />
+                        <Checkbox checked={pray2} onChange={handleChange} name="pray2" sx={noMarginPaddingRight}/>
                     }
                     label="מנחה"
                 />
-                <FormControlLabel
+                <FormControlLabel sx={noMarginPaddingRight}
                     control={
-                        <Checkbox checked={pray3} onChange={handleChange} name="pray3" />
+                        <Checkbox checked={pray3} onChange={handleChange} name="pray3" sx={noMarginPaddingRight}/>
                     }
                     label="ערבית"
                 />
