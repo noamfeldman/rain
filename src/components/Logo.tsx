@@ -16,11 +16,11 @@ const SpinImage = styled.img`
 }}`
 
 export default function Logo(props: IDropsProps) {
-    const { numOfDrops } = props;
-    const display = numOfDrops === 100;
+    const { numOfDrops, righteous } = props;
+    const display = righteous || numOfDrops === 100;
     return (
         <Fade in={display} timeout={2000}>
-            <SpinImage src={logo} alt="יצאת צדיק!" />
+            <img src={logo} alt="יצאת צדיק!" width="50px"/>
         </Fade>
     )
 }

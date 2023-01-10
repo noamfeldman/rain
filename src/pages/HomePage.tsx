@@ -3,6 +3,7 @@ import { Grid, Slider, Typography } from '@mui/material';
 import DropsAnimation from '../components/DropsAnimation';
 import RainMessages from '../components/RainMessages';
 import Logo from '../components/Logo';
+import Questionnaire from '../components/Questionnaire';
 
 const marks = [
   {
@@ -32,7 +33,7 @@ const valuetext = (value: number) => {
 };
 
 const gridContainer = {
-  height: "90vh",
+  height: "95vh",
   '@media (min-width: 780px)': {
     height: "100vh"
   }
@@ -41,6 +42,7 @@ const gridContainer = {
 export default function HomePage() {
   const initDropSlider = 10;
   const [drops, setDrops] = React.useState(initDropSlider);
+  const [isRighteous, setIsRighteous] = React.useState(false);
   const [sliderValue, setSliderValue] = React.useState(initDropSlider);
 
   const onNumberOfDropsChangeHandler = (
@@ -52,6 +54,10 @@ export default function HomePage() {
       setSliderValue(Number(value));
     }
   };
+
+  const handleQuestionnaireChange = (righteous: boolean) => {
+    setIsRighteous(righteous);
+  }
 
   return (
     <>
@@ -79,8 +85,11 @@ export default function HomePage() {
             נראה לכם?
           </Typography>
         </Grid>
+        <Grid item>
+          <Questionnaire onChange={handleQuestionnaireChange}/>
+        </Grid>
         <Grid item alignSelf="center">
-          <Logo numOfDrops={sliderValue} />
+          <Logo numOfDrops={sliderValue} righteous={isRighteous}/>
         </Grid>
         <Grid item>
           <Grid container flexDirection="column">
